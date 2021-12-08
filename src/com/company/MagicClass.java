@@ -31,7 +31,7 @@ public class MagicClass {
         Long m = (long) Math.pow(2, 48);
 
         List<Long> generated = generator(a, c, m, 1).limit(300).collect(Collectors.toList());
-        System.out.println("generated: " + generated);
+        System.out.println(generated);
 
         System.out.println("\nExercise5:");
         List<String> numbersList = List.of("1", "10", "6", "3", "9", "7", "21", "2", "4", "5", "11");
