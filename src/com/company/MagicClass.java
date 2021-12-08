@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class MagicClass {
-    private List<String> names = List.of("Aleksander", "Maxim", "Artyom", "Mikhail", "Ivan", "Danila", "Dmitriy", "Kirill", "Andrei", "Egor");
+    private final List<String> names = List.of("Aleksander", "Maxim", "Artyom", "Mikhail", "Ivan", "Danila", "Dmitriy", "Kirill", "Andrei", "Egor");
 
     public void run() {
         System.out.println("Exercise1:");
@@ -21,7 +21,7 @@ public class MagicClass {
         System.out.println(sortedList);
 
         System.out.println("\nExercise3:");
-        String [] numbers = {"1, 2, 0", "4, 5"};
+        String[] numbers = {"1, 2, 0", "4, 5"};
         List<Integer> integers = Arrays.stream(String.join(", ", numbers).split(", ")).map(Integer::parseInt).sorted().collect(Collectors.toList());
         System.out.print(integers);
 
@@ -46,8 +46,8 @@ public class MagicClass {
         return Stream.iterate(seed, n -> (a * n + c) % m);
     }
 
-    public <T> Stream<T> zip(List<String> first, List<String> second, List<String> result){
-        if(first.size() > second.size()){
+    public <T> Stream<T> zip(List<String> first, List<String> second, List<String> result) {
+        if (first.size() > second.size()) {
             shuffle(second, first, result);
         } else {
             shuffle(first, second, result);
@@ -55,7 +55,7 @@ public class MagicClass {
         return (Stream<T>) result.stream();
     }
 
-    public <T> void shuffle(List<String> first, List<String> second, List<String> result){
+    public <T> void shuffle(List<String> first, List<String> second, List<String> result) {
         for (int i = 0; i < first.size(); i++) {
             result.add(first.get(i));
             result.add(second.get(i));
